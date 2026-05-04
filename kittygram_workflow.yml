@@ -1,9 +1,6 @@
 name: Kittygram Deploy
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -119,6 +116,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.VM_SSH_PASSPHRASE }}
           source: docker-compose.production.yml
           target: /home/${{ secrets.USER }}/kittygram
 
@@ -128,6 +126,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.VM_SSH_PASSPHRASE }}
           script: |
             set -e
             mkdir -p /home/${{ secrets.USER }}/kittygram
@@ -135,7 +134,7 @@ jobs:
 
             cat > .env <<EOF_ENV
             DOCKERHUB_USERNAME=${{ secrets.DOCKER_USERNAME }}
-            SECRET_KEY=${{ secrets.SECRET_KEY }}
+            SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}
             DEBUG=False
             ALLOWED_HOSTS=${{ secrets.HOST }},localhost,127.0.0.1,backend,gateway
             POSTGRES_DB=${{ secrets.POSTGRES_DB }}
