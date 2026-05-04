@@ -60,8 +60,8 @@ http://<VM_PUBLIC_IP>:8080
 | `YC_FOLDER_ID` | ID каталога Yandex Cloud | `yc config get folder-id` |
 | `YC_KEY_JSON` | service account authorized key в формате base64 | создаётся через `yc iam key create` |
 | `TF_STATE_BUCKET` | имя Object Storage bucket для Terraform state | имя заранее созданного бакета |
-| `TF_STATE_ACCESS_KEY` | static access key для Object Storage | создаётся для service account |
-| `TF_STATE_SECRET_KEY` | static secret key для Object Storage | создаётся вместе с access key |
+| `ACCESS_KEY` | static access key для Object Storage | создаётся для service account |
+| `SECRET_KEY` | static secret key для Object Storage | создаётся вместе с access key |
 | `VM_SSH_PUBLIC_KEY` | публичный SSH-ключ для подключения к VM | содержимое файла `*.pub` |
 
 Получить `cloud_id` и `folder_id`:
