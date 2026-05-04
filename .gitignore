@@ -1,0 +1,54 @@
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.cache/
+*.log
+
+# --- Virtualenv ---
+.venv/
+venv/
+ENV/
+
+# --- Django ---
+media/
+static/
+staticfiles/
+*.sqlite3
+
+# --- Node / frontend ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+frontend/build/
+frontend/dist/
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.iml
+
+# --- Docker ---
+*.tar

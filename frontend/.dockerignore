@@ -1,0 +1,9 @@
+node_modules
+build
+dist
+.git
+.gitignore
+Dockerfile*
+README*
+npm-debug.log*
+yarn.lock
