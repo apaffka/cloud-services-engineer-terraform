@@ -116,6 +116,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.VM_SSH_PASSPHRASE }}
           source: docker-compose.production.yml
           target: /home/${{ secrets.USER }}/kittygram
 
@@ -125,6 +126,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.VM_SSH_PASSPHRASE }}
           script: |
             set -e
             mkdir -p /home/${{ secrets.USER }}/kittygram
